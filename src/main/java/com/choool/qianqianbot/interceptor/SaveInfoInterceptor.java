@@ -18,6 +18,7 @@ import love.forte.simbot.listener.MsgInterceptor;
 import love.forte.simbot.listener.ScopeContext;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Set;
@@ -47,6 +48,7 @@ public class SaveInfoInterceptor implements MsgInterceptor {
 
     @NotNull
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public InterceptionType intercept(@NotNull MsgInterceptContext context) {
         //获取每次监听事件触发的监听上下文
         final ScopeContext scopeContext = context.getListenerContext().getContext(ListenerContext.Scope.EVENT_INSTANT);
