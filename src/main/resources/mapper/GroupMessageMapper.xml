@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.choool.qianqianbot.mapper.GroupMessageMapper">
+    <resultMap id="BaseResultMap" type="com.choool.qianqianbot.entity.GroupMessage">
+        <!--@mbg.generated-->
+        <!--@Table GROUP_MESSAGE-->
+        <id column="ID" jdbcType="INTEGER" property="id"/>
+        <result column="CONTENT" jdbcType="VARCHAR" property="content"/>
+        <result column="MESSAGE_ID" jdbcType="VARCHAR" property="messageId"/>
+        <result column="CREATED_TIME" jdbcType="TIMESTAMP" property="createdTime"/>
+        <result column="GROUP_ID" jdbcType="BIGINT" property="groupId"/>
+        <result column="QQ" jdbcType="BIGINT" property="qq"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, CONTENT, MESSAGE_ID, CREATED_TIME, GROUP_ID, QQ
+    </sql>
+    <insert id="insertSelective" keyColumn="ID" keyProperty="id"
+            parameterType="com.choool.qianqianbot.entity.GroupMessage" useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into GROUP_MESSAGE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="content != null">
+                CONTENT,
+            </if>
+            <if test="messageId != null">
+                MESSAGE_ID,
+            </if>
+            <if test="createdTime != null">
+                CREATED_TIME,
+            </if>
+            <if test="groupId != null">
+                GROUP_ID,
+            </if>
+            <if test="qq != null">
+                QQ,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="content != null">
+                #{content,jdbcType=VARCHAR},
+            </if>
+            <if test="messageId != null">
+                #{messageId,jdbcType=VARCHAR},
+            </if>
+            <if test="createdTime != null">
+                #{createdTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="groupId != null">
+                #{groupId,jdbcType=BIGINT},
+            </if>
+            <if test="qq != null">
+                #{qq,jdbcType=BIGINT},
+            </if>
+        </trim>
+    </insert>
+</mapper>

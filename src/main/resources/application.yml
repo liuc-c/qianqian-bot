@@ -1,0 +1,25 @@
+simbot:
+  core:
+    bot-resource-type: file
+  component:
+    mirai:
+      protocol: android_pad
+server:
+  port: 8088
+
+#时区设置
+spring:
+  jackson:
+    time-zone: Asia/Shanghai
+  #数据库
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://139.9.134.170:3306/QIANQIAN_BOT?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 1127
+
+#mybatis配置
+mybatis:
+  config-location: classpath:mybatis-config.xml #配置mybatis配置文件路径
+  mapper-locations: classpath:mapper/*.xml #配置mapper文件路径
+  type-aliases-package: com.choool.qianqianbot.entity #扫描实体类

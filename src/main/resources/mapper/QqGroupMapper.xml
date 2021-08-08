@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.choool.qianqianbot.mapper.QqGroupMapper">
+    <resultMap id="BaseResultMap" type="com.choool.qianqianbot.entity.QqGroup">
+        <!--@mbg.generated-->
+        <!--@Table QQ__GROUP-->
+        <id column="ID" jdbcType="INTEGER" property="id"/>
+        <result column="GROUP_ID" jdbcType="INTEGER" property="groupId"/>
+        <result column="QQ_ID" jdbcType="INTEGER" property="qqId"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+        <!--@mbg.generated-->
+        ID, GROUP_ID, QQ_ID
+    </sql>
+    <insert id="insertSelective" keyColumn="ID" keyProperty="id" parameterType="com.choool.qianqianbot.entity.QqGroup"
+            useGeneratedKeys="true">
+        <!--@mbg.generated-->
+        insert into QQ__GROUP
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="groupId != null">
+                GROUP_ID,
+            </if>
+            <if test="qqId != null">
+                QQ_ID,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="groupId != null">
+                #{groupId,jdbcType=INTEGER},
+            </if>
+            <if test="qqId != null">
+                #{qqId,jdbcType=INTEGER},
+            </if>
+        </trim>
+    </insert>
+    <sql id="Join_Column_List">
+        <!--@mbg.generated-->
+        QQ__GROUP.ID as QQ__GROUP_ID,
+        QQ__GROUP.GROUP_ID as QQ__GROUP_GROUP_ID,
+        QQ__GROUP.QQ_ID as QQ__GROUP_QQ_ID
+    </sql>
+    <resultMap id="JoinResultMap" type="com.choool.qianqianbot.entity.QqGroup">
+        <!--@mbg.generated-->
+        <id column="QQ__GROUP_ID" property="id"/>
+        <result column="QQ__GROUP_GROUP_ID" property="groupId"/>
+        <result column="QQ__GROUP_QQ_ID" property="qqId"/>
+    </resultMap>
+</mapper>
