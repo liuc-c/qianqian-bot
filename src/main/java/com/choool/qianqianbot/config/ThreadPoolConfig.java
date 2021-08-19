@@ -28,7 +28,7 @@ public class ThreadPoolConfig {
         // 设置线程活跃时间（秒），允许的空闲时间,当超过了核心线程出之外的线程在空闲时间到达之后会被销毁
         executor.setKeepAliveSeconds(60);
         // 设置默认线程名称,线程名称前缀
-        executor.setThreadNamePrefix("unomi-thread-");
+        executor.setThreadNamePrefix("qianqian-bot-thread-");
         // 设置拒绝策略,线程池对拒绝任务（无线程可用）的处理策略，目前只支持AbortPolicy、CallerRunsPolicy；默认为后者
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.CallerRunsPolicy());
         // 等待所有任务结束后再关闭线程池

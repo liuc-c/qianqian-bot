@@ -17,35 +17,36 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class GroupMessage implements Serializable {
+    private static final long serialVersionUID = 1L;
     /**
      * id
      */
     private Integer id;
-
     /**
      * 消息内容
      */
     private String content;
-
     /**
      * 消息ID
      */
     private String messageId;
-
     /**
      * 创建时间
      */
     private Date createdTime;
-
     /**
      * 群号
      */
     private Long groupId;
-
     /**
      * qq号
      */
     private Long qq;
 
-    private static final long serialVersionUID = 1L;
+    public GroupMessage(String content, String messageId, Long groupId, Long qq) {
+        this.content = content;
+        this.messageId = messageId;
+        this.groupId = groupId;
+        this.qq = qq;
+    }
 }

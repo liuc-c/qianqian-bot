@@ -3,7 +3,7 @@ package com.choool.qianqianbot.mapper;
 import com.choool.qianqianbot.entity.Qq;
 
 /**
- * TODO
+ * QqMapper
  *
  * @author <a href="https://github.com/liuc-c">choool</a>
  * @since 2021/8/2 1:46

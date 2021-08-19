@@ -4,7 +4,7 @@ import com.choool.qianqianbot.entity.Group;
 import org.apache.ibatis.annotations.Param;
 
 /**
- * TODO
+ * GroupMapper
  *
  * @author <a href="https://github.com/liuc-c">choool</a>
  * @since $date$ $time$
